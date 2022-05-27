@@ -62,6 +62,6 @@ resource "aws_instance" "app-instance" {
   vpc_security_group_ids = [aws_security_group.app-securitygroup.id]
 
   # the public SSH key
-  key_name = var.instance_keypair
+  key_name = aws_key_pair.appkeypair.key_name
 }
 

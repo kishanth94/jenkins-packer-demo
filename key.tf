@@ -6,3 +6,8 @@ resource "aws_key_pair" "mykeypair" {
   }
 }
 
+resource "aws_key_pair" "appkeypair" {
+  key_name   = "appkeypair"
+  public_key = file(var.APP_PUBLIC_KEY)
+}
+
